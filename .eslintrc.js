@@ -44,6 +44,7 @@ module.exports = {
       files: ["*.vue"],
       rules: {
         "max-len": "off",
+        "vue/multi-word-component-names": "off",
         "vue/max-len": [
           "error",
           {

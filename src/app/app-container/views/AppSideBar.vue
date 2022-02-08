@@ -4,7 +4,7 @@
     :class="{ 'flex xl:w-64': isSidebarOpen, 'hidden xl:flex xl:w-24': !isSidebarOpen }"
   >
     <div
-      class="flex-shrink-0 hidden max-h-14 xl:items-center xl:justify-start xl:space-x-3 xl:flex xl:max-h-20 xl:h-full xl:px-8 border-b border-b-grey-light"
+      class="flex-shrink-0 hidden max-h-14 xl:items-center xl:justify-start xl:space-x-3 xl:flex xl:max-h-20 xl:h-full xl:px-8 border-b-2 border-b-grey-light"
     >
       <a
         href="#"

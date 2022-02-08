@@ -1,6 +1,6 @@
 <template>
   <header
-    class="sticky top-0 flex items-center flex-shrink-0 w-full h-full bg-opacity-100 bg-blue-50 max-h-20 border-b border-b-grey-light"
+    class="sticky top-0 flex items-center flex-shrink-0 w-full h-full bg-opacity-100 bg-blue-50 max-h-20 border-b-2 border-b-grey-light"
   >
     <div class="flex items-center flex-shrink-0 xl:hidden">
       <button
@@ -24,9 +24,9 @@
         </div>
 
         <ul class="flex items-center justify-center ml-auto mr-2 space-x-2 lg:mr-5">
-          <li class="flex items-center justify-center cursor-pointer gap-3">
-            <RectAvatar>JD</RectAvatar>
-            <span class="text-secondary text-base font-bold">John Doe</span>
+          <li v-if="avatarName" class="flex items-center justify-center cursor-pointer gap-3">
+            <RectAvatar>{{ avatarName }}</RectAvatar>
+            <span class="text-secondary text-base font-bold">{{ fullName }}</span>
           </li>
         </ul>
       </nav>
@@ -35,8 +35,11 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from "vue"
+import { computed, ComputedRef, defineComponent } from "vue"
+import { useStore } from "@/store"
+
 import RectAvatar from "@/ui-kit/avatar/RectAvatar.vue"
+import { UserInformation } from "@/domain/users/Users.Model"
 
 export default defineComponent({
   components: {
@@ -44,7 +47,15 @@ export default defineComponent({
   },
 
   setup(props, { emit }) {
+    const store = useStore()
+    const currentUser: ComputedRef<UserInformation | null> = computed(() => store.getters.currentUser)
+    const fullName = computed(() => currentUser.value?.fullName)
+    const avatarName = computed(() => currentUser.value?.avatarName)
+
     return {
+      fullName,
+      avatarName,
+
       toggleSidebar: () => {
         emit("toggleSidebar")
       },

@@ -1,7 +1,7 @@
 <template>
   <body class="antialiased text-gray-900">
-    <div class="relative flex h-screen ">
-      <AppSideBar :sidebarOpen="isSidebarOpen" />
+    <div class="relative flex h-screen">
+      <AppSideBar :sidebar-open="isSidebarOpen" />
 
       <div class="relative flex flex-col flex-1 h-full max-h-full overflow-y-scroll">
         <AppNavigationBar @toggleSidebar="toggleSidebar" />

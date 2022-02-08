@@ -7,7 +7,7 @@ const routes = [
     path: "/",
     component: ReportPageView,
     meta: {
-      title: "MVP Factory Test Frontend #3",
+      title: "Reports",
     },
   },
 ]
