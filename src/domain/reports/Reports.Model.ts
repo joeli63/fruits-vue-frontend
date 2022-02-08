@@ -11,6 +11,11 @@ export interface Project {
   name: string
 }
 
+export interface ProjectInformation {
+  id: string
+  name: string
+}
+
 export interface GateWay {
   gatewayId: string
   userIds: string[]
@@ -21,9 +26,24 @@ export interface GateWay {
   description: string
 }
 
+export interface GateWayInformation {
+  id: string
+  name: string
+}
+
 export interface ReportFilter {
-  from: string
-  to: string
+  from?: string
+  to?: string
   projectId?: string
   gatewayId?: string
+}
+
+export interface Report {
+  paymentId: string
+  amount: number
+  projectId: string
+  gatewayId: string
+  userIds: string[]
+  modified: string
+  created: string
 }

@@ -1,7 +1,7 @@
 import { AxiosRequestConfig } from "axios"
 
 export const baseUrl = (hostname: string) => {
-  const host = "http://178.63.13.157:8090/mock-api/api"
+  const host = (import.meta.env.VITE_APP_ENDPOINT || "").toString()
 
   switch (hostname) {
     case "localhost":

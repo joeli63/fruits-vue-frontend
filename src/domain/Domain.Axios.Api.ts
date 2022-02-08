@@ -13,22 +13,34 @@ const get = <T>(url: string, queryParams?: object): Observable<DomainResponse<T>
   )
 }
 
-const post = <T>(url: string, body: object, queryParams?: object): Observable<DomainResponse<T> | void> => {
-  return defer(() => axiosInstance.post<DomainResponse<T>>(url, body, { params: queryParams })).pipe(
-    map((result) => result.data),
-  )
+const post = <T>(
+  url: string,
+  body: object,
+  queryParams?: object,
+): Observable<DomainResponse<T> | void> => {
+  return defer(() =>
+    axiosInstance.post<DomainResponse<T>>(url, body, { params: queryParams }),
+  ).pipe(map((result) => result.data))
 }
 
-const put = <T>(url: string, body: object, queryParams?: object): Observable<DomainResponse<T> | void> => {
+const put = <T>(
+  url: string,
+  body: object,
+  queryParams?: object,
+): Observable<DomainResponse<T> | void> => {
   return defer(() => axiosInstance.put<DomainResponse<T>>(url, body, { params: queryParams })).pipe(
     map((result) => result.data),
   )
 }
 
-const patch = <T>(url: string, body: object, queryParams?: object): Observable<DomainResponse<T> | void> => {
-  return defer(() => axiosInstance.patch<DomainResponse<T>>(url, body, { params: queryParams })).pipe(
-    map((result) => result.data),
-  )
+const patch = <T>(
+  url: string,
+  body: object,
+  queryParams?: object,
+): Observable<DomainResponse<T> | void> => {
+  return defer(() =>
+    axiosInstance.patch<DomainResponse<T>>(url, body, { params: queryParams }),
+  ).pipe(map((result) => result.data))
 }
 
 const deleteR = <T>(url: string, id: number): Observable<DomainResponse<T> | void> => {

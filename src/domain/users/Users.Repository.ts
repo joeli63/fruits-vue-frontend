@@ -8,7 +8,7 @@ import { DomainResponse } from "../Domain.Model"
 export const getUsers = (): Observable<UserInformation[]> => {
   return apiCall
     .get<UserResponse[]>("users")
-    .pipe(map((usersResponse: DomainResponse<UserResponse[]>) => userMap(usersResponse.data))) as Observable<
-    UserInformation[]
-  >
+    .pipe(
+      map((usersResponse: DomainResponse<UserResponse[]>) => userMap(usersResponse.data)),
+    ) as Observable<UserInformation[]>
 }

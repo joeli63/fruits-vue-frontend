@@ -1,16 +1,19 @@
-import { Project, GateWay } from "@/domain/reports/Reports.Model"
+import { ProjectInformation, GateWayInformation, Report } from "@/domain/reports/Reports.Model"
 import { UserInformation } from "@/domain/users/Users.Model"
 
 export interface State {
   debug: boolean
   version: string
   users: UserInformation[]
-  projects: Project[]
-  gateways: GateWay[]
+  projects: ProjectInformation[]
+  gateways: GateWayInformation[]
+  reports: Report[]
 }
 
 const versionString =
-  import.meta.env.MODE === "development" ? import.meta.env.VITE_APP_VERSION + "-dev" : import.meta.env.VITE_APP_VERSION
+  import.meta.env.MODE === "development"
+    ? import.meta.env.VITE_APP_VERSION + "-dev"
+    : import.meta.env.VITE_APP_VERSION
 
 export const state: State = {
   debug: import.meta.env.MODE === "development",
@@ -18,4 +21,5 @@ export const state: State = {
   users: [],
   projects: [],
   gateways: [],
+  reports: [],
 }
