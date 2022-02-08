@@ -4,7 +4,7 @@ Simple, opinionated, **fully typed**, and **production-ready** project template 
 
 ![Editor screenshot](src/assets/editor_screenshot.png)
 
-Please [check out the Demo View](http://mvpf-frontend-test-3.surge.sh/) to see how it looks. A [detailed changelog](./CHANGES.md) is available. This repository is also [mirrored on GitLab](https://github.com/ironwebstar/MVP-Factory-Frontend-Test-3).
+[Demo View](http://mvpf-frontend-test-3.surge.sh/).
 
 ## Features
 
