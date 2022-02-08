@@ -34,7 +34,7 @@ module.exports = {
         semi: false,
         trailingComma: "all",
         singleQuote: false,
-        printWidth: 120,
+        printWidth: 100,
       },
     ],
     "no-console": "warn",
@@ -45,10 +45,11 @@ module.exports = {
       rules: {
         "max-len": "off",
         "vue/multi-word-component-names": "off",
+        "vue/no-setup-props-destructure": "off",
         "vue/max-len": [
           "error",
           {
-            code: 120,
+            code: 100,
             template: 300,
             ignoreStrings: true,
             ignoreUrls: true,

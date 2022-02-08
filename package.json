@@ -7,7 +7,7 @@
     "preview": "vite build && vite preview",
     "start": "yarn dev & wait-on tcp:3000 -v",
     "lint": "eslint src/ --ext .ts --ext .tsx --max-warnings=0",
-    "lint:fix": "eslint src/ --ext .ts --ext .tsx --fix",
+    "lint:fix": "eslint src/ --ext .ts --ext .tsx --ext .vue --ext .json --fix",
     "test": "cypress open",
     "test-components": "cypress open-ct",
     "test:ci": "cypress run --headless",
@@ -16,6 +16,7 @@
   "dependencies": {
     "@vueuse/head": "~0.7",
     "axios": "^0.25.0",
+    "chart.js": "2.9.4",
     "date-fns": "^2.28.0",
     "rxjs": "^7.5.2",
     "vue": "~3.2",

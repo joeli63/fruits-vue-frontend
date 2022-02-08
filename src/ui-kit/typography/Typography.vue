@@ -24,7 +24,10 @@ export default defineComponent({
     })
 
     const classNames = computed(
-      () => `${textSize.value} ${props.variant !== TypographyVariant.normal ? "font-bold" : "font-normal"}`,
+      () =>
+        `${textSize.value} ${
+          props.variant !== TypographyVariant.normal ? "font-bold" : "font-normal"
+        }`,
     )
 
     return {

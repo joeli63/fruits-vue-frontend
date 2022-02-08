@@ -6,6 +6,12 @@ module.exports = {
     content: ["./index.html", "./src/**/*.{vue,ts}"],
   },
 
+  variants: {
+    extend: {
+      backgroundColor: ["event"],
+    },
+  },
+
   theme: {
     extend: {
       fontFamily: {
