@@ -1,8 +1,12 @@
+import { Project, GateWay } from "@/domain/reports/Reports.Model"
+import { UserInformation } from "@/domain/users/Users.Model"
+
 export interface State {
   debug: boolean
   version: string
-  isInitialized: boolean
-  count: number
+  users: UserInformation[]
+  projects: Project[]
+  gateways: GateWay[]
 }
 
 const versionString =
@@ -11,6 +15,7 @@ const versionString =
 export const state: State = {
   debug: import.meta.env.MODE === "development",
   version: versionString,
-  isInitialized: false,
-  count: 0,
+  users: [],
+  projects: [],
+  gateways: [],
 }

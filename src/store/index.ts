@@ -1,5 +1,3 @@
-/* eslint-disable @typescript-eslint/no-extra-semi */
-import { InjectionKey } from "vue"
 import { createStore, Store as VuexStore, CommitOptions, DispatchOptions } from "vuex"
 
 import { mutations, Mutations, Mutation } from "./mutations"
@@ -7,9 +5,6 @@ import { actions, Actions, Action } from "./actions"
 import { getters, Getters } from "./getters"
 import { state } from "./state"
 import type { State } from "./state"
-
-// eslint-disable-next-line symbol-description
-export const key: InjectionKey<VuexStore<State>> = Symbol()
 
 export const store = createStore({
   state,
