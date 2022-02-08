@@ -1,7 +1,7 @@
 import { Observable, map } from "rxjs"
 
-import apiCall from "../Domain.Axios.Api"
-import { DomainResponse } from "../Domain.Model"
+import apiCall from "@/domain/Domain.Axios.Api"
+import { DomainResponse } from "@/domain/Domain.Model"
 import { projectMapper, gatewayMapper } from "./Reports.Mapper"
 import {
   GateWay,

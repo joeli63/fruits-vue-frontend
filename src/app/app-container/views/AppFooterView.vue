@@ -1,8 +1,8 @@
 <template>
   <footer class="flex-shrink-0">
     <div class="py-2 mb-2 font-bold text-secondary text-base">
-      <LinkButton label="Terms & Conditions" link="#" /> |
-      <LinkButton label="Privacy Policy" link="#" />
+      <LinkButton label="Terms & Conditions" link="/" /> |
+      <LinkButton label="Privacy Policy" link="/" />
     </div>
   </footer>
 </template>
