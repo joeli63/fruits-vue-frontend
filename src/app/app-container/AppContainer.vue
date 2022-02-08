@@ -19,7 +19,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, Ref, ref } from "vue"
+import { defineComponent, ref } from "vue"
 
 import AppNavigationBar from "./views/AppNavigationBar.vue"
 import AppSideBar from "./views/AppSideBar.vue"
@@ -33,7 +33,7 @@ export default defineComponent({
   },
 
   setup() {
-    const isSidebarOpen: Ref<boolean> = ref(!(window.innerWidth <= 1200))
+    const isSidebarOpen = ref<boolean>(!(window.innerWidth <= 1200))
 
     const toggleSidebar = () => {
       isSidebarOpen.value = !isSidebarOpen.value

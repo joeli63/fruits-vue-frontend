@@ -1,8 +1,8 @@
 <template>
   <header
-    class="sticky top-0 flex items-center flex-shrink-0 w-full h-full bg-opacity-100 bg-blue-50 max-h-20 border-b-2 border-b-grey-light"
+    class="sticky top-0 flex items-center flex-shrink-0 w-full h-full bg-blue-50 max-h-20 border-b-2 border-b-grey-light"
   >
-    <div class="flex items-center flex-shrink-0 xl:hidden">
+    <div class="flex items-center flex-shrink-0 md:hidden">
       <button
         class="p-2 text-blue-600 rounded-full hover:bg-blue-200"
         aria-label="Sidenav button"
@@ -35,7 +35,7 @@
 </template>
 
 <script lang="ts">
-import { computed, ComputedRef, defineComponent } from "vue"
+import { computed, defineComponent } from "vue"
 import { useStore } from "@/store"
 
 import RectAvatar from "@/ui-kit/avatar/RectAvatar.vue"
@@ -48,7 +48,7 @@ export default defineComponent({
 
   setup(props, { emit }) {
     const store = useStore()
-    const currentUser: ComputedRef<UserInformation | null> = computed(() => store.getters.currentUser)
+    const currentUser = computed<UserInformation | null>(() => store.getters.currentUser)
     const fullName = computed(() => currentUser.value?.fullName)
     const avatarName = computed(() => currentUser.value?.avatarName)
 

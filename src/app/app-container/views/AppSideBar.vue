@@ -1,7 +1,10 @@
 <template>
   <aside
     class="fixed left-0 right-0 z-10 flex-col flex-shrink-0 h-full overflow-hidden transition-all bg-transparent bottom-10 xl:h-screen top-16 xl:static xl:z-auto"
-    :class="{ 'flex xl:w-64': isSidebarOpen, 'hidden xl:flex xl:w-24': !isSidebarOpen }"
+    :class="{
+      'flex xl:w-64': isSidebarOpen,
+      'hidden xl:flex xl:w-24': !isSidebarOpen,
+    }"
   >
     <div
       class="flex-shrink-0 hidden max-h-14 xl:items-center xl:justify-start xl:space-x-3 xl:flex xl:max-h-20 xl:h-full xl:px-8 border-b-2 border-b-grey-light"
@@ -27,9 +30,17 @@
             <li v-for="menu in menus" :key="menu.label" class="pb-3">
               <button class="flex items-center px-2">
                 <img class="block object-cover mx-4" :src="menu.icon" alt="menu dashboard" />
-                <span :class="{ 'xl:hidden': !isSidebarOpen }" class="font-bold text-secondary text-lg">
+                <router-link
+                  class="font-bold text-lg"
+                  :class="{
+                    'xl:hidden': !isSidebarOpen,
+                    'text-secondary': currentPath === menu.to,
+                    'text-grey': currentPath !== menu.to,
+                  }"
+                  :to="menu.to"
+                >
                   {{ menu.label }}
-                </span>
+                </router-link>
               </button>
             </li>
           </ul>
@@ -40,7 +51,8 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, toRefs, ref, Ref } from "vue"
+import { defineComponent, toRefs, ref } from "vue"
+import { useRoute } from "vue-router"
 
 import MenuDashboardGreyIcon from "../../../assets/menu-dashboard-grey.svg"
 import MenuMonitorGreyIcon from "../../../assets/menu-monitor-grey.svg"
@@ -51,6 +63,7 @@ import MenuViewGreyIcon from "../../../assets/menu-view-grey.svg"
 interface AppNavigationMenu {
   label: string
   icon: string
+  to: string
 }
 
 export default defineComponent({
@@ -62,18 +75,21 @@ export default defineComponent({
   },
 
   setup(props) {
+    const route = useRoute()
+
     const { sidebarOpen } = toRefs(props)
-    const menus: Ref<AppNavigationMenu[]> = ref([
-      { label: "Dashboard", icon: MenuDashboardGreyIcon },
-      { label: "View", icon: MenuViewGreyIcon },
-      { label: "Power", icon: MenuPowerGreyIcon },
-      { label: "Reports", icon: MenuReportColorIcon },
-      { label: "Monitor", icon: MenuMonitorGreyIcon },
+    const menus = ref<AppNavigationMenu[]>([
+      { label: "Dashboard", icon: MenuDashboardGreyIcon, to: "/" },
+      { label: "View", icon: MenuViewGreyIcon, to: "/" },
+      { label: "Power", icon: MenuPowerGreyIcon, to: "/" },
+      { label: "Reports", icon: MenuReportColorIcon, to: "/reports" },
+      { label: "Monitor", icon: MenuMonitorGreyIcon, to: "/" },
     ])
 
     return {
       isSidebarOpen: sidebarOpen,
       menus,
+      currentPath: route.path,
     }
   },
 })
