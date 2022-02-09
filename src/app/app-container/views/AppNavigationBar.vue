@@ -1,6 +1,6 @@
 <template>
   <header
-    class="sticky top-0 flex items-center flex-shrink-0 w-full h-full bg-blue-50 max-h-20 border-b-2 border-b-grey-light"
+    class="bg-white sticky top-0 flex items-center flex-shrink-0 w-full h-full bg-blue-50 max-h-20 border-b-2 border-b-grey-light"
   >
     <div class="flex items-center flex-shrink-0 md:hidden">
       <button
@@ -15,7 +15,7 @@
       <nav class="relative flex items-center justify-end flex-1 lg:justify-start">
         <div class="flex items-center">
           <button
-            class="pr-2 text-blue-600 rounded-full hover:bg-blue-200"
+            class="pl-2 text-blue-600 rounded-full hover:bg-blue-200"
             aria-label="Sidenav button"
             @click="toggleSidebar"
           >
