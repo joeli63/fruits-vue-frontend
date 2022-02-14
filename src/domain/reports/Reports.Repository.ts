@@ -2,7 +2,7 @@ import { Observable, map } from "rxjs"
 
 import apiCall from "@/domain/Domain.Axios.Api"
 import { DomainResponse } from "@/domain/Domain.Model"
-import { projectMapper, gatewayMapper } from "./Reports.Mapper"
+import { projectMapper, gatewayMapper, reportsMapper } from "./Reports.Mapper"
 import {
   GateWay,
   Project,
@@ -32,6 +32,6 @@ export const postReport = (item: ReportFilter): Observable<Report[]> => {
   return apiCall
     .post<Report[]>("report", item)
     .pipe(
-      map((reportsResponse: void | DomainResponse<Report[]>) => reportsResponse?.data),
+      map((reportsResponse: void | DomainResponse<Report[]>) => reportsMapper(reportsResponse?.data)),
     ) as Observable<Report[]>
 }
