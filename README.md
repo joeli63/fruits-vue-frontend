@@ -20,6 +20,24 @@ Simple, opinionated, **fully typed**, and **production-ready** project template 
   - `@tailwindcss/typography`
   - `@tailwindcss/forms`
   - `firefox`-variant
+- Pulling up API requests using `rxjs` and `axios`.
+(By using `from` conversion function from rxjs to convert the promises to observables.
+Why observerble is better than Promise?
+You can do much more with it! rxjs provides tons of operators to let you gracefully control your request.
+```
+  Axios.post('/user', {
+    firstName: 'Fred',
+    lastName: 'Flintstone'
+  })
+  .pipe(
+  	retry(3)
+  )
+   .subscribe(
+    response => console.log(response),
+    error => console.log(error)
+  );
+```
+Advantage is that you don't have to write any custom observer, handling the success and error response and cancel request are all defined correctly by you.)
 - PostCSS 8 w/ `postcss-nesting` plugin
 - `Eslint` and `Prettier` for code styling
 - `Chart.js` for the data visualization
