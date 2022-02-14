@@ -8,7 +8,9 @@ Simple, opinionated, **fully typed**, and **production-ready** project template 
 
 ## Features
 
-- Vue 3.2
+- `Vue 3.2`
+- `Vite` for the frontend build tooling, instead of Vue Cli
+- Using `Composition API` syntax(see the official [Script Setup documentation](https://v3.vuejs.org/api/composition-api.html))
 - **Fully typed** [Vuex 4](https://next.vuex.vuejs.org/) store
 - Routing using [vue-router 4](https://next.router.vuejs.org/)
 - TypeScript 4.5
@@ -19,11 +21,11 @@ Simple, opinionated, **fully typed**, and **production-ready** project template 
   - `@tailwindcss/forms`
   - `firefox`-variant
 - PostCSS 8 w/ `postcss-nesting` plugin
-- Eslint
-- Prettier
+- `Eslint` and `Prettier` for code styling
+- `Chart.js` for the data visualization
+- `date-fns` date/time handling.
 - Alias `@` to `<project_root>/src`
 - Manually configured global components in `main.ts`
-- Using `Composition API` syntax(see the official [Script Setup documentation](https://v3.vuejs.org/api/composition-api.html).
 - // Cypress.io e2e tests (configured similarly to `vue-cli`)
 - // Cypress.io component tests
 
@@ -61,7 +63,19 @@ To get started:
 
    Now you should be able to see the project running at localhost:3000.
 
-4. Open `src/*` and start experimenting!
+4. Lint code using ESLint and Vue, Prettier, typescript configs
+
+   ```bash
+   # Using npm
+   npm run lint
+   npm run lint:fix
+
+   # Using Yarn
+   yarn lint
+   yarn lint:fix
+   ```
+
+5. Open `src/*` and start experimenting!
 
 ## Building for production
 
