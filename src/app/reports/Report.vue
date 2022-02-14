@@ -3,11 +3,9 @@
     <div class="flex justify-between items-base w-full h-24">
       <div>
         <Typography :variant="TypographyVariant.header">{{ title }}</Typography>
-        <Typography
-          ><p class="text-grey font-bold">
-            Easily generate a report of your transactions
-          </p></Typography
-        >
+        <Typography>
+          <p class="text-grey font-bold">Easily generate a report of your transactions</p>
+        </Typography>
       </div>
 
       <ReportFilterView
@@ -16,6 +14,7 @@
         @setFilterOptions="setFilterOptions"
       />
     </div>
+
     <div class="w-full mb-10">
       <ReportNoDataView v-if="reports.length === 0" />
       <ReportDataView

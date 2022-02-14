@@ -1,7 +1,5 @@
 <template>
-  <div class="relative report-chart__view">
-    <!-- <canvas id="doughnutChart" /> -->
-  </div>
+  <div class="relative report-chart__view" />
 </template>
 
 <script lang="ts">
@@ -29,7 +27,6 @@ export default defineComponent({
     }))
 
     onMounted(() => {
-      // const ctx = document.getElementById("doughnutChart")
       const canvasElement = document.createElement("canvas")
       canvasElement.id = "doughnutChart"
       document.getElementsByClassName("report-chart__view")[0].appendChild(canvasElement)

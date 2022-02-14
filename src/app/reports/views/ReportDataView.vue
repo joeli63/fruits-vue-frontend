@@ -17,7 +17,7 @@
           <div
             class="w-4 h-4 block rounded-md"
             :style="{ backgroundColor: chartData.datasets[0].backgroundColor[index] }"
-          ></div>
+          />
           {{ label }}
         </div>
       </div>
