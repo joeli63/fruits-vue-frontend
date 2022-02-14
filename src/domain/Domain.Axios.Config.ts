@@ -7,7 +7,7 @@ export const baseUrl = (hostname: string) => {
     case "localhost":
       return host
     /* Demo */
-    case "mvpf-frontend-3-test-demo.surge.sh":
+    case "mvpf-frontend-3-test-demo.surge.sh" || "ironwebstar-mvpf-test.netlify.app":
       return host
     default:
       throw new Error(`${host} api domain is not supported`)

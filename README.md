@@ -4,7 +4,8 @@ Simple, opinionated, **fully typed**, and **production-ready** project template 
 
 ![Editor screenshot](src/assets/editor_screenshot.png)
 
-[Demo View](http://mvpf-frontend-test-3.surge.sh/)
+[Demo View in Surge](http://mvpf-frontend-3-test-demo.surge.sh/)
+[Demo View in Netlify](https://ironwebstar-mvpf-test.netlify.app/)
 
 ## Features
 
