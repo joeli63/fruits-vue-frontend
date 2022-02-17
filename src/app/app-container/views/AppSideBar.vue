@@ -14,7 +14,7 @@
         class="flex flex-shrink-0 text-xl font-bold tracking-widest text-blue-800 uppercase items-center gap-4"
       >
         <img class="block object-cover ml-2" src="../../../assets/logo.svg" alt="logo" />
-        <div v-if="isSidebarOpen">MVP Factory</div>
+        <div v-if="isSidebarOpen">Demo</div>
       </a>
     </div>
 

@@ -1,11 +1,10 @@
-# MVP Factory Frontend Test #3
+# Vite + Vue 3(composition API) + Typescript + TailwindCSS Starter App
 
 Simple, opinionated, **fully typed**, and **production-ready** project template for Vite.
 
 ![Editor screenshot](src/assets/editor_screenshot.png)
 
-[Demo View in Surge](http://mvpf-frontend-3-test-demo.surge.sh/)
-[Demo View in Netlify](https://ironwebstar-mvpf-test.netlify.app/)
+[Demo View in Surge](http://Vite-Vue3-TailwindCSS-Typescript-demo.surge.sh/)
 
 ## Features
 
@@ -55,9 +54,9 @@ To get started:
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/ironwebstar/MVP-Factory-Frontend-Test-3.git
+   git clone https://github.com/ironwebstar/Vite-Vue3-TailwindCSS-Typescript.git
 
-   cd MVP-Factory-Frontend-Test-3
+   cd Vite-Vue3-TailwindCSS-Typescript
    ```
 
 2. Install the dependencies:

@@ -1,5 +1,5 @@
 {
-  "name": "mvp-factory-test-frontend-3",
+  "name": "vite-vue-3-typescript-tailwindcss",
   "version": "1.0.0",
   "scripts": {
     "dev": "vite",
