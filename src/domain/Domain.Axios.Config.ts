@@ -7,7 +7,7 @@ export const baseUrl = (hostname: string) => {
     case "localhost":
       return host
     /* Demo */
-    case "Vite-Vue3-TailwindCSS-Typescript.surge.sh" ||
+    case "vite-vue3-tailwindcss-typescript-demo.surge.sh" ||
       "ironwebstar-Vite-Vue3-TailwindCSS-Typescript.netlify.app":
       return host
     default:
