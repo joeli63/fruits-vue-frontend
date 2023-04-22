@@ -5,8 +5,8 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, onMounted } from "vue"
-import { useStore, Action } from "@/store"
+import { defineComponent } from "vue"
+// import { useStore, Action } from "@/store"
 
 import AppContainer from "./app/app-container/AppContainer.vue"
 
@@ -15,12 +15,12 @@ export default defineComponent({
     AppContainer,
   },
 
-  setup() {
-    const store = useStore()
+  // setup() {
+  //   const store = useStore()
 
-    onMounted(async () => {
-      await store.dispatch(Action.getUsers)
-    })
-  },
+  //   onMounted(async () => {
+  //     await store.dispatch(Action.getFruits)
+  //   })
+  // },
 })
 </script>

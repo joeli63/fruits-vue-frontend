@@ -1,13 +1,13 @@
 import { GetterTree } from "vuex"
 import { State } from "./state"
-import { UserInformation } from "@/domain/users/Users.Model"
+import { IFruit } from "@/domain/fruits/Fruits.Models"
 
 export type Getters = {
-  currentUser(state: State): UserInformation | null
+  currentFruits(state: State): IFruit[]
 }
 
 export const getters: GetterTree<State, State> & Getters = {
-  currentUser(state) {
-    return state.users.length ? state.users[0] : null
+  currentFruits(state) {
+    return state.fruits
   },
 }

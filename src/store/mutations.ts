@@ -1,36 +1,38 @@
 import { MutationTree } from "vuex"
 import { State } from "./state"
-import { UserInformation } from "@/domain/users/Users.Model"
-import { GateWayInformation, ProjectInformation, Report } from "@/domain/reports/Reports.Model"
+import { IFruit } from "@/domain/fruits/Fruits.Models"
 
 export enum Mutation {
-  SET_USERS = "SET_USERS",
-  SET_PROJECTS = "SET_PROJECTS",
-  SET_GATEWAYS = "SET_GATEWAYS",
-  SET_REPORTS = "SET_REPORTS",
+  SET_FRUITS = "SET_FRUITS",
+  SET_TOTAL = "SET_TOTAL",
+  SET_CURRENT_PAGE = "SET_CURRENT_PAGE",
+  SET_NAME = "SET_NAME",
+  SET_FAMILY = "SET_FAMILY",
 }
 
 export type Mutations<S = State> = {
-  [Mutation.SET_USERS](state: S, payload: UserInformation[]): void
-  [Mutation.SET_PROJECTS](state: S, payload: ProjectInformation[]): void
-  [Mutation.SET_GATEWAYS](state: S, payload: GateWayInformation[]): void
-  [Mutation.SET_REPORTS](state: S, payload: Report[]): void
+  [Mutation.SET_FRUITS](state: S, payload: IFruit[]): void
+  [Mutation.SET_TOTAL](state: S, payload: number): void
+  [Mutation.SET_CURRENT_PAGE](state: S, payload: number): void
+  [Mutation.SET_NAME](state: S, payload: string): void
+  [Mutation.SET_FAMILY](state: S, payload: string): void
 }
 
 export const mutations: MutationTree<State> & Mutations = {
-  [Mutation.SET_USERS](state: State, payload: UserInformation[]) {
-    state.users = payload
+  [Mutation.SET_FRUITS](state: State, payload: IFruit[]) {
+    state.fruits = payload
   },
-
-  [Mutation.SET_PROJECTS](state: State, payload: ProjectInformation[]) {
-    state.projects = payload
+  [Mutation.SET_TOTAL](state: State, payload: number) {
+    state.total = payload
+    state.totalPage = Math.floor(payload / state.fruitsPerPage)
   },
-
-  [Mutation.SET_GATEWAYS](state: State, payload: GateWayInformation[]) {
-    state.gateways = payload
+  [Mutation.SET_CURRENT_PAGE](state: State, payload: number) {
+    state.pageNumber = payload
   },
-
-  [Mutation.SET_REPORTS](state: State, payload: Report[]) {
-    state.reports = payload
+  [Mutation.SET_NAME](state: State, payload: string) {
+    state.nameFilter = payload
+  },
+  [Mutation.SET_FAMILY](state: State, payload: string) {
+    state.familyFilter = payload
   },
 }

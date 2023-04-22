@@ -1,13 +1,15 @@
-import { ProjectInformation, GateWayInformation, Report } from "@/domain/reports/Reports.Model"
-import { UserInformation } from "@/domain/users/Users.Model"
+import { IFruit } from "@/domain/fruits/Fruits.Models"
 
 export interface State {
   debug: boolean
   version: string
-  users: UserInformation[]
-  projects: ProjectInformation[]
-  gateways: GateWayInformation[]
-  reports: Report[]
+  pageNumber: number
+  fruitsPerPage: number
+  fruits: IFruit[]
+  nameFilter: string
+  familyFilter: string
+  total: number
+  totalPage: number
 }
 
 const versionString =
@@ -18,8 +20,11 @@ const versionString =
 export const state: State = {
   debug: import.meta.env.MODE === "development",
   version: versionString,
-  users: [],
-  projects: [],
-  gateways: [],
-  reports: [],
+  pageNumber: 1,
+  fruitsPerPage: 10,
+  fruits: [],
+  nameFilter: "",
+  familyFilter: "",
+  total: 0,
+  totalPage: 1,
 }

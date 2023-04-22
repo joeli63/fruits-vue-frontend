@@ -1,17 +1,17 @@
 import { createRouter, createWebHistory } from "vue-router"
 
-import ReportPageView from "@/app/reports/Report.vue"
+import FruitsPageView from "@/app/fruits/index.vue"
 
 const routes = [
   {
     path: "/",
-    redirect: "/reports",
+    redirect: "/fruits",
   },
   {
-    path: "/reports",
-    component: ReportPageView,
+    path: "/fruits",
+    component: FruitsPageView,
     meta: {
-      title: "Reports",
+      title: "Fruits",
     },
   },
 ]
